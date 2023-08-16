@@ -1,6 +1,5 @@
 import moment from 'moment';
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { FaRegBookmark, FaShareNodes, FaEye } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
@@ -40,7 +39,6 @@ const NewsCard = ({ news }) => {
                         details
                     }
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
             </Card.Body>
             <Card.Footer className="text-muted">
                 <div className='d-flex align-items-center justify-content-between'>
