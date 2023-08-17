@@ -9,12 +9,12 @@ const RightSideNav = () => {
         <div>
             <div className='mb-4'>
                 <h5>Login With</h5>
-                <Button variant="outline-danger" className='mb-2 w-75'>Login With Google</Button>
-                <Button variant="outline-secondary" className='w-75'>Login With Github</Button>
+                <Button variant="outline-danger" className='mb-2 w-100'>Login With Google</Button>
+                <Button variant="outline-secondary" className='w-100'>Login With Github</Button>
             </div>
             <div>
                 <h6>Find Us On</h6>
-                <ListGroup className='w-75'>
+                <ListGroup className='w-100'>
                     <ListGroup.Item><FaFacebook size={20} /><span className='ms-2'>Facebook</span></ListGroup.Item>
                     <ListGroup.Item><FaSquareTwitter size={20} /><span className='ms-2'>Twitter</span></ListGroup.Item>
                     <ListGroup.Item><FaInstagram size={20} /><span className='ms-2'>Instagram</span></ListGroup.Item>

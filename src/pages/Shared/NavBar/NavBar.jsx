@@ -2,28 +2,30 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
+import './NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({ categories }) => {
+
     return (
-        <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
-            <Container>
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="navbar-collapse justify-content-center">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    </Nav>
-                    <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+        <div className='d-flex justify-content-center'>
+            <Navbar collapseOnSelect expand="lg" className="my-4 py-3 rounded bg-transparent opacity-50 border w-75">
+                <Container>
+                    <Navbar.Toggle className='bg-white' aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse className='' id="responsive-navbar-nav">
+                        <Nav className="navbar-collapse justify-content-center">
+                            {
+                                categories.map(category => <Link
+                                    to={`category/${category.id}`}
+                                    className='text-decoration-none ms-2 pe-2'
+                                    key={category.id}
+                                ><span className='text-light hover-overlay'>{category.name}</span></Link>)
+                            }
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        </div>
     );
 };
 

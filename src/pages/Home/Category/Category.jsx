@@ -5,7 +5,6 @@ import NewsCard from '../../Shared/NewsCard/NewsCard';
 const Category = () => {
 
     const categoryNews = useLoaderData();
-    console.log(categoryNews);
 
     return (
         <div>

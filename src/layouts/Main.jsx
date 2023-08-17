@@ -11,7 +11,7 @@ import RightSideNav from '../pages/Shared/RightSideNav/RightSideNav';
 
 const Main = () => {
     return (
-        <div>
+        <div className='bg-dark text-white'>
             <Container>
                 <Row>
                     <Col>

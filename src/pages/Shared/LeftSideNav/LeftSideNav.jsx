@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { Link } from 'react-router-dom';
+import NavBar from '../NavBar/NavBar';
 
 
 const LeftSideNav = () => {
@@ -23,7 +24,8 @@ const LeftSideNav = () => {
                         <ListGroup.Item>
                             <Link to={`category/${category.id}`}>{category.name}</Link>
                         </ListGroup.Item>
-                    </ListGroup>)
+                    </ListGroup>
+                )
             }
         </div>
     );
