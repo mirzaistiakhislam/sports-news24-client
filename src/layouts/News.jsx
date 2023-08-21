@@ -7,14 +7,15 @@ import Footer from '../pages/Shared/Footer/Footer';
 import { Outlet } from 'react-router-dom';
 import RightSideNav from '../pages/Shared/RightSideNav/RightSideNav';
 import LeftSideNav from '../pages/Shared/LeftSideNav/LeftSideNav';
+import NavBar from '../pages/Shared/NavBar/NavBar';
 
 const News = () => {
     return (
-        <div>
+        <div className='bg-dark text-white'>
             <Container>
                 <Row>
                     <Col>
-                        <Header></Header>
+                        <NavBar></NavBar>
                     </Col>
                 </Row>
                 <Row>
