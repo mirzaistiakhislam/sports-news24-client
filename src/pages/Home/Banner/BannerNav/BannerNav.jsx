@@ -1,12 +1,13 @@
 import React from 'react';
 import './BannerNav.css';
 import { Container, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const BannerNav = () => {
     return (
         <Navbar className="bg-dark">
             <Container className=''>
-                <Navbar.Brand className='text-white' href="#home">Sports News <span style={{ color: 'orange' }}>24</span></Navbar.Brand>
+                <Link to='/category/0' className='text-white text-decoration-none align-middle fs-5'>Sports News <span style={{ color: 'orange' }}>24</span></Link>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text className='text-white'>

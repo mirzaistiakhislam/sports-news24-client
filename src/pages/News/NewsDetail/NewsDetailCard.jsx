@@ -5,11 +5,11 @@ import { Link, useLoaderData } from 'react-router-dom';
 const NewsDetailCard = () => {
 
     const newsDetail = useLoaderData();
-    const { author: { img, name, published_date }, category_id, details, image_url, rating: { number }, title, total_view, _id } = newsDetail;
+    const { author, category_id, details, image_url, rating, title, total_view, _id } = newsDetail;
 
     return (
         <div>
-            <Card>
+            <Card className='bg-transparent bg-gradient text-white mb-4'>
                 <Card.Body>
                     <Card.Img variant="top" src={image_url} />
                     <Card.Title className='my-2'>{title}</Card.Title>

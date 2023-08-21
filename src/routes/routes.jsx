@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Link, Navigate, createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/Main";
 import Home from "../pages/Home/Home/Home";
 import Category from "../pages/Home/Category/Category";
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Navigate to="/category/0"></Navigate>
             },
             {
                 path: '/category/:id',
@@ -23,15 +23,19 @@ const router = createBrowserRouter([
     },
 
     {
-        path: '/news',
+        path: '/',
         element: <News></News>,
         children: [
             {
-                path: '/news/:id',
+                path: '/:id',
                 element: <NewsDetailCard></NewsDetailCard>,
                 loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`)
             }
         ]
+    },
+    {
+        path: '*',
+        element: <div className="text-white">Page not found!! Please go to <Link to='/'>Home</Link> Page</div>
     }
 ]);
 

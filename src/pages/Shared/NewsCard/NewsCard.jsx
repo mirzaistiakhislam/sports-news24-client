@@ -11,8 +11,8 @@ const NewsCard = ({ news }) => {
     const { author: { img, name, published_date }, details, image_url, rating: { number }, title, total_view, _id } = news;
 
     return (
-        <Card className='mb-3'>
-            <Card.Header>
+        <Card className='mb-4 bg-transparent bg-gradient text-white'>
+            <Card.Header className=''>
                 <div className='d-flex align-items-center'>
                     <div>
                         <Card.Img variant="top" src={img} className='rounded-circle' style={{ width: "45px", height: "45px" }} />
@@ -29,11 +29,11 @@ const NewsCard = ({ news }) => {
             </Card.Header>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
-                <Card.Img variant="top" src={image_url} />
+                <Card.Img variant="top" src={image_url} className='rounded my-2 mb-2' />
                 <Card.Text>
                     {details.length > 200 ?
                         <>
-                            {details.slice(0, 200)} ...<Link to={`/news/${_id}`}>Read More</Link>
+                            {details.slice(0, 200)} ...<Link to={`/${_id}`}>Read More</Link>
                         </>
                         :
                         details
@@ -42,7 +42,7 @@ const NewsCard = ({ news }) => {
             </Card.Body>
             <Card.Footer className="text-muted">
                 <div className='d-flex align-items-center justify-content-between'>
-                    <div className='d-flex'>
+                    <div className='d-flex text-white'>
                         <Rating
                             style={{ maxWidth: 100 }}
                             value={number}
@@ -50,7 +50,7 @@ const NewsCard = ({ news }) => {
                         />
                         <span className='ms-1'>{number}</span>
                     </div>
-                    <div className='d-flex align-items-center'>
+                    <div className='d-flex align-items-center text-white'>
                         <FaEye />
                         <span className='ms-2'>{total_view}</span>
                     </div>

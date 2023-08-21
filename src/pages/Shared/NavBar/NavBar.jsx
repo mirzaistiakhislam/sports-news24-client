@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const NavBar = () => {
 
@@ -15,20 +16,33 @@ const NavBar = () => {
             .then(data => setCategories(data));
     }, []);
 
+    // 
+
     return (
         <div className='d-none d-sm-block'>
-            <div className='d-flex justify-content-center'>
+            <div className='d-md-flex justify-content-center '>
                 <Navbar collapseOnSelect expand="lg" className="my-4 py-3 rounded bg-transparent opacity-50 border w-75">
                     <Container>
                         <Navbar.Toggle className='bg-white' aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse className='' id="responsive-navbar-nav">
-                            <Nav className="navbar-collapse justify-content-center">
+                            <Nav className="navbar-collapse d-md-flex justify-content-center">
                                 {
-                                    categories.map(category => <Link
-                                        to={`category/${category.id}`}
-                                        className='text-decoration-none ms-2 pe-2'
-                                        key={category.id}
-                                    ><span className='text-light hover-overlay'>{category.name}</span></Link>)
+                                    categories.map(category =>
+                                        // <Link
+                                        //     to={`category/${category.id}`}
+                                        //     className='text-decoration-none ms-2 pe-2'
+                                        //     key={category.id}
+                                        // ><span className='text-light hover-overlay'>{category.name}</span>
+                                        // </Link>)
+
+                                        <ActiveLink
+                                            key={category.id}
+                                            to={`category/${category.id}`}
+
+                                        >
+                                            {category.name}
+                                        </ActiveLink>
+                                    )
                                 }
                             </Nav>
                         </Navbar.Collapse>
