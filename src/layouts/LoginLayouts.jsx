@@ -1,16 +1,11 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Header from '../pages/Home/Header/Header';
-import Footer from '../pages/Shared/Footer/Footer';
-import { Outlet } from 'react-router-dom';
-import RightSideNav from '../pages/Shared/RightSideNav/RightSideNav';
-import LeftSideNav from '../pages/Shared/LeftSideNav/LeftSideNav';
+import { Col, Container, Row } from 'react-bootstrap';
 import NavBar from '../pages/Shared/NavBar/NavBar';
+import { Outlet } from 'react-router-dom';
+import Footer from '../pages/Shared/Footer/Footer';
 import BannerNav from '../pages/Home/Banner/BannerNav/BannerNav';
 
-const News = () => {
+const LoginLayouts = () => {
     return (
         <div className='bg-dark text-white'>
             <Container>
@@ -21,11 +16,8 @@ const News = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col md={9}>
+                    <Col>
                         <Outlet></Outlet>
-                    </Col>
-                    <Col md={3}>
-                        <RightSideNav></RightSideNav>
                     </Col>
                 </Row>
                 <Row>
@@ -38,4 +30,4 @@ const News = () => {
     );
 };
 
-export default News;
+export default LoginLayouts;

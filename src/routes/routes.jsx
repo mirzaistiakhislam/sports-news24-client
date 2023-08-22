@@ -4,6 +4,9 @@ import Home from "../pages/Home/Home/Home";
 import Category from "../pages/Home/Category/Category";
 import News from "../layouts/News";
 import NewsDetailCard from "../pages/News/NewsDetail/NewsDetailCard";
+import LoginLayouts from "../layouts/LoginLayouts";
+import Login from "../pages/Login/Login/Login";
+import Register from "../pages/Login/Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -34,8 +37,22 @@ const router = createBrowserRouter([
         ]
     },
     {
+        path: '/',
+        element: <LoginLayouts></LoginLayouts>,
+        children: [
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
+            }
+        ]
+    },
+    {
         path: '*',
-        element: <div className="text-white">Page not found!! Please go to <Link to='/'>Home</Link> Page</div>
+        element: <div className="">Page not found!! Please go to <Link to='/'>Home</Link> Page</div>
     }
 ]);
 
