@@ -1,14 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import { toast } from 'react-hot-toast';
 
 const Login = () => {
 
     const { loginUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
 
     const handleLogin = (event) => {
         event.preventDefault();
+        setError('');
 
         const form = event.target;
         const email = form.email.value;
@@ -17,10 +24,12 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                form.reset();
+                toast.success('Login Successfully!!');
+                navigate(from, { replace: true });
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
     }
 
@@ -37,6 +46,11 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name="password" placeholder="Enter Password" required />
                 </Form.Group>
+
+                {error &&
+                    <Form.Group className="my-3" controlId="formBasicCheckbox">
+                        <span className='text-danger'>{error}</span>
+                    </Form.Group>}
 
                 <Button variant="primary" type="submit">
                     Login

@@ -1,18 +1,19 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import NavBar from '../pages/Shared/NavBar/NavBar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
 import Footer from '../pages/Shared/Footer/Footer';
 import BannerNav from '../pages/Home/Banner/BannerNav/BannerNav';
 
 const LoginLayouts = () => {
+
     return (
         <div className='bg-dark text-white'>
+
             <Container>
                 <Row>
                     <Col>
                         <BannerNav></BannerNav>
-                        <NavBar></NavBar>
                     </Col>
                 </Row>
                 <Row>
