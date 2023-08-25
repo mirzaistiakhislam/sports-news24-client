@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBk7NBAOgMoOaYT6MypwkSLDs0OFbhXMpA",
-    authDomain: "sports-news24.firebaseapp.com",
-    projectId: "sports-news24",
-    storageBucket: "sports-news24.appspot.com",
-    messagingSenderId: "143289096265",
-    appId: "1:143289096265:web:fd9e94236df9dfe1ff8798"
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

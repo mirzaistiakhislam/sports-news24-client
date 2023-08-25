@@ -9,7 +9,7 @@ import './Banner.css';
 
 const Banner = () => {
     return (
-        <div >
+        <div>
             <BannerNav></BannerNav>
             <Carousel style={{ maxHeight: '400px' }}>
                 <Carousel.Item style={{ maxHeight: '400px' }}>
@@ -17,6 +17,7 @@ const Banner = () => {
                         className="d-block w-100"
                         src={coverpic1}
                         alt="First slide"
+                        id='carousel-control'
                     />
                 </Carousel.Item>
                 <Carousel.Item style={{ maxHeight: '400px' }}>
